@@ -1,0 +1,110 @@
+diff --git a/examples/run_glue.py b/examples/run_glue.py
+index 19316cb..bef98bb 100644
+--- a/examples/run_glue.py
++++ b/examples/run_glue.py
+@@ -354,6 +354,8 @@ def main(): @@ this change adds `sequential fine-tuning` option
+                              "than this will be truncated, sequences shorter will be padded.")
+     parser.add_argument("--do_train", action='store_true',
+                         help="Whether to run training.")
++    parser.add_argument("--sequential", action='store_true',
++                        help="Sequential fine-tune from a checkpoint.")
+     parser.add_argument("--do_eval", action='store_true',
+                         help="Whether to run eval on the dev set.")
+     parser.add_argument("--evaluate_during_training", action='store_true',
+@@ -488,7 +490,10 @@ def main(): @@ this change adds `sequential fine-tuning` option
+     tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name if args.tokenizer_name else args.model_name_or_path,
+                                                 do_lower_case=args.do_lower_case,
+                                                 cache_dir=args.cache_dir if args.cache_dir else None)
+-    model = model_class.from_pretrained(args.model_name_or_path,
++    if args.sequential:
++        model = model_class.from_pretrained(args.output_dir)
++    else:
++        model = model_class.from_pretrained(args.model_name_or_path,
+                                         from_tf=bool('.ckpt' in args.model_name_or_path),
+                                         config=config,
+                                         cache_dir=args.cache_dir if args.cache_dir else None)
+diff --git a/transformers/data/metrics/__init__.py b/transformers/data/metrics/__init__.py
+index c9ebaac..eddb931 100644
+--- a/transformers/data/metrics/__init__.py
++++ b/transformers/data/metrics/__init__.py
+@@ -79,5 +79,7 @@ if _has_sklearn: @@ this change adds processing for `asnq`
+             return {"acc": simple_accuracy(preds, labels)}
+         elif task_name == "wnli":
+             return {"acc": simple_accuracy(preds, labels)}
++        elif task_name == "asnq":
++            return {"acc": simple_accuracy(preds, labels)}
+         else:
+             raise KeyError(task_name)
+diff --git a/transformers/data/processors/glue.py b/transformers/data/processors/glue.py
+index 518251b..de77dca 100644
+--- a/transformers/data/processors/glue.py
++++ b/transformers/data/processors/glue.py
+@@ -513,6 +513,46 @@ class WnliProcessor(DataProcessor): @@ this change adds processing for `asnq`
+                 InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
+         return examples
+ 
++
++class AsnqProcessor(DataProcessor):
++    """Processor for the ASNQ data set (for TANDA)."""
++
++    def get_example_from_tensor_dict(self, tensor_dict):
++        """See base class."""
++        return InputExample(tensor_dict['idx'].numpy(),
++                            tensor_dict['sentence'].numpy().decode('utf-8'),
++                            None,
++                            str(tensor_dict['label'].numpy()))
++
++    def get_train_examples(self, data_dir):
++        """See base class."""
++        return self._create_examples(
++            self._read_tsv(os.path.join(data_dir, "train.tsv")), "train")
++
++    def get_dev_examples(self, data_dir):
++        """See base class."""
++        return self._create_examples(
++            self._read_tsv(os.path.join(data_dir, "dev.tsv")), "dev")
++
++    def get_labels(self):
++        """See base class."""
++        return ["0", "1"]
++
++    def _create_examples(self, lines, set_type):
++        """Creates examples for the training and dev sets."""
++        examples = []
++        for (i, line) in enumerate(lines):
++            guid = "%s-%s" % (set_type, i)
++            text_a = line[0]
++            text_b = line[1]
++            if eval(line[-1].strip()) == 4:
++                label = "1"
++            else:
++                label = "0"
++            examples.append(
++                InputExample(guid=guid, text_a=text_a, text_b=None, label=label))
++        return examples
++
+ glue_tasks_num_labels = {
+     "cola": 2,
+     "mnli": 3,
+@@ -523,6 +563,7 @@ glue_tasks_num_labels = {
+     "qnli": 2,
+     "rte": 2,
+     "wnli": 2,
++    "asnq": 2,
+ }
+ 
+ glue_processors = {
+@@ -536,6 +577,7 @@ glue_processors = {
+     "qnli": QnliProcessor,
+     "rte": RteProcessor,
+     "wnli": WnliProcessor,
++    "asnq": AsnqProcessor,
+ }
+ 
+ glue_output_modes = {
+@@ -549,4 +591,5 @@ glue_output_modes = {
+     "qnli": "classification",
+     "rte": "classification",
+     "wnli": "classification",
++    "asnq": "classification",
+ }
