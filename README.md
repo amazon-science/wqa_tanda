@@ -18,7 +18,7 @@ git apply tanda-sequential-finetuning-with-asnq.diff
 * `f3386` is the latest commit as of `Sun Nov 17 18:08:51 2019 +0900`, and `tanda-sequential-finetuning-with-asnq.diff` is the diff to enable the option.
 
 For example, to transfer with ASNQ and adapt with a target dataset:
-* download [the ASNQ dataset](#answer-sentence-natural-questions-(asnq)) and the target dataset (e.g. Wiki-QA, formatted similar as ASNQ), and
+* download [the ASNQ dataset](#answer-sentence-natural-questions-asnq) and the target dataset (e.g. Wiki-QA, formatted similar as ASNQ), and
 * run the following script
  
 
