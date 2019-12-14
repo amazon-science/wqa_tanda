@@ -80,7 +80,7 @@ index 518251b..de77dca 100644
 +            else:
 +                label = "0"
 +            examples.append(
-+                InputExample(guid=guid, text_a=text_a, text_b=None, label=label))
++                InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
 +        return examples
 +
  glue_tasks_num_labels = {
