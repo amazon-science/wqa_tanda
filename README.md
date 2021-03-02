@@ -87,14 +87,22 @@ We use the following datasets in the paper:
  - [TANDA: RoBERTa-Large ASNQ &rarr; TREC-QA](https://wqa-public.s3.amazonaws.com/tanda-aaai-2020/models/tanda_roberta_large_asnq_trec.tar)
 
 ## How To Cite TANDA
-The paper is to appear in the AAAI 2020 proceedings. For now, please cite [the Arxiv version](https://arxiv.org/abs/1911.04118)
+The paper appeared in the AAAI 2020 proceedings. Please cite our work if you find our paper, dataset, pretrained models or code useful:
 
 ```
-@article{garg2019tanda,
-  title={TANDA: Transfer and Adapt Pre-Trained Transformer Models for Answer Sentence Selection},
-  author={Siddhant Garg and Thuy Vu and Alessandro Moschitti},
-  year={2019},
-  eprint={1911.04118},
+@article{Garg_2020,
+   title={TANDA: Transfer and Adapt Pre-Trained Transformer Models for Answer Sentence Selection},
+   volume={34},
+   ISSN={2159-5399},
+   url={http://dx.doi.org/10.1609/AAAI.V34I05.6282},
+   DOI={10.1609/aaai.v34i05.6282},
+   number={05},
+   journal={Proceedings of the AAAI Conference on Artificial Intelligence},
+   publisher={Association for the Advancement of Artificial Intelligence (AAAI)},
+   author={Garg, Siddhant and Vu, Thuy and Moschitti, Alessandro},
+   year={2020},
+   month={Apr},
+   pages={7780–7788}
 }
 ```
 
@@ -108,4 +116,4 @@ The sample [script](#script) within this documentation is made available under t
 ## Contact
 For help or issues, please submit a GitHub issue.
 
-For direct communication, please contact Siddhant Garg (sgarg33 is at wisc dot edu, https://github.com/sid7954), Thuy Vu (thuyvu is at amazon dot com), or Alessandro Moschitti (amosch is at amazon dot com).
+For direct communication, please contact Siddhant Garg (sidgarg is at amazon dot com), Thuy Vu (thuyvu is at amazon dot com), or Alessandro Moschitti (amosch is at amazon dot com).
