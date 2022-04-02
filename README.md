@@ -57,7 +57,7 @@ We use the following datasets in the paper:
 
 ### Answer-Sentence Natural Questions (ASNQ)
 * ASNQ is a dataset for answer sentence selection derived from Google Natural Questions (NQ) dataset (Kwiatkowski et al. 2019). The dataset details can be found in our paper.
-* ASNQ is used to transfer the pre-trained models in the paper, and can be downloaded [here](https://wqa-public.s3.amazonaws.com/tanda-aaai-2020/data/asnq.tar).
+* ASNQ is used to transfer the pre-trained models in the paper, and can be downloaded [here](https://d3t7erp6ge410c.cloudfront.net/tanda-aaai-2020/data/asnq.tar).
 * ASNQ-Dev++ can be downloaded [here](https://wqa-public.s3.amazonaws.com/sequential-reranker-sigir-2020/data/asnq.dev%2B%2B.tar).
 
 ### Domain Datasets
@@ -69,22 +69,22 @@ We use the following datasets in the paper:
 
 ### Models Transferred on ASNQ
 
- - [BERT-Base ASNQ](https://wqa-public.s3.amazonaws.com/tanda-aaai-2020/models/tanda_bert_base_asnq.tar)
- - [BERT-Large ASNQ](https://wqa-public.s3.amazonaws.com/tanda-aaai-2020/models/tanda_bert_large_asnq.tar)
- - [RoBERTa-Base ASNQ](https://wqa-public.s3.amazonaws.com/tanda-aaai-2020/models/tanda_roberta_base_asnq.tar)
- - [RoBERTa-Large ASNQ](https://wqa-public.s3.amazonaws.com/tanda-aaai-2020/models/tanda_roberta_large_asnq.tar)
+ - [BERT-Base ASNQ](https://d3t7erp6ge410c.cloudfront.net/tanda-aaai-2020/models/tanda_bert_base_asnq.tar)
+ - [BERT-Large ASNQ](https://d3t7erp6ge410c.cloudfront.net/tanda-aaai-2020/models/tanda_bert_large_asnq.tar)
+ - [RoBERTa-Base ASNQ](https://d3t7erp6ge410c.cloudfront.net/tanda-aaai-2020/models/tanda_roberta_base_asnq.tar)
+ - [RoBERTa-Large ASNQ](https://d3t7erp6ge410c.cloudfront.net/tanda-aaai-2020/models/tanda_roberta_large_asnq.tar)
 
 ### TANDA: Models Transferred on ASNQ, then Fine-Tuned with Wiki-QA
 
- - [TANDA: BERT-Base ASNQ &rarr; Wiki-QA](https://wqa-public.s3.amazonaws.com/tanda-aaai-2020/models/tanda_bert_base_asnq_wikiqa.tar)
- - [TANDA: BERT-Large ASNQ &rarr; Wiki-QA](https://wqa-public.s3.amazonaws.com/tanda-aaai-2020/models/tanda_bert_large_asnq_wikiqa.tar)
- - [TANDA: RoBERTa-Large ASNQ &rarr; Wiki-QA](https://wqa-public.s3.amazonaws.com/tanda-aaai-2020/models/tanda_roberta_large_asnq_wikiqa.tar)
+ - [TANDA: BERT-Base ASNQ &rarr; Wiki-QA](https://d3t7erp6ge410c.cloudfront.net/tanda-aaai-2020/models/tanda_bert_base_asnq_wikiqa.tar)
+ - [TANDA: BERT-Large ASNQ &rarr; Wiki-QA](https://d3t7erp6ge410c.cloudfront.net/tanda-aaai-2020/models/tanda_bert_large_asnq_wikiqa.tar)
+ - [TANDA: RoBERTa-Large ASNQ &rarr; Wiki-QA](https://d3t7erp6ge410c.cloudfront.net/tanda-aaai-2020/models/tanda_roberta_large_asnq_wikiqa.tar)
 
 ### TANDA: Models Transferred on ASNQ, then Fine-Tuned with TREC-QA
 
- - [TANDA: BERT-Base ASNQ &rarr; TREC-QA](https://wqa-public.s3.amazonaws.com/tanda-aaai-2020/models/tanda_bert_base_asnq_trec.tar)
- - [TANDA: BERT-Large ASNQ &rarr; TREC-QA](https://wqa-public.s3.amazonaws.com/tanda-aaai-2020/models/tanda_bert_large_asnq_trec.tar)
- - [TANDA: RoBERTa-Large ASNQ &rarr; TREC-QA](https://wqa-public.s3.amazonaws.com/tanda-aaai-2020/models/tanda_roberta_large_asnq_trec.tar)
+ - [TANDA: BERT-Base ASNQ &rarr; TREC-QA](https://d3t7erp6ge410c.cloudfront.net/tanda-aaai-2020/models/tanda_bert_base_asnq_trec.tar)
+ - [TANDA: BERT-Large ASNQ &rarr; TREC-QA](https://d3t7erp6ge410c.cloudfront.net/tanda-aaai-2020/models/tanda_bert_large_asnq_trec.tar)
+ - [TANDA: RoBERTa-Large ASNQ &rarr; TREC-QA](https://d3t7erp6ge410c.cloudfront.net/tanda-aaai-2020/models/tanda_roberta_large_asnq_trec.tar)
 
 ## How To Cite TANDA
 The paper appeared in the AAAI 2020 proceedings. Please cite our work if you find our paper, dataset, pretrained models or code useful:
