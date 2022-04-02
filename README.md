@@ -58,7 +58,7 @@ We use the following datasets in the paper:
 ### Answer-Sentence Natural Questions (ASNQ)
 * ASNQ is a dataset for answer sentence selection derived from Google Natural Questions (NQ) dataset (Kwiatkowski et al. 2019). The dataset details can be found in our paper.
 * ASNQ is used to transfer the pre-trained models in the paper, and can be downloaded [here](https://d3t7erp6ge410c.cloudfront.net/tanda-aaai-2020/data/asnq.tar).
-* ASNQ-Dev++ can be downloaded [here](https://wqa-public.s3.amazonaws.com/sequential-reranker-sigir-2020/data/asnq.dev%2B%2B.tar).
+* ASNQ-Dev++ can be downloaded [here](https://d3t7erp6ge410c.cloudfront.net/tanda-aaai-2020/data/asnq.dev%2B%2B.tar).
 
 ### Domain Datasets
 * **Wiki-QA**: we used the Wiki-QA dataset from [here](http://aka.ms/WikiQA) and removed all the questions that have no correct answers.
