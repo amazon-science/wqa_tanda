@@ -116,4 +116,4 @@ The sample [script](#script) within this documentation is made available under t
 ## Contact
 For help or issues, please submit a GitHub issue.
 
-For direct communication, please contact Siddhant Garg (sidgarg is at amazon dot com), Thuy Vu (thuyvu is at amazon dot com), or Alessandro Moschitti (amosch is at amazon dot com).
+For direct communication, please contact Siddhant Garg (https://github.com/sid7954), Thuy Vu (thuyvu is at amazon dot com), or Alessandro Moschitti (amosch is at amazon dot com).
